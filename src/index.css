@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Palette de couleurs pastel violet/rose et variables globales */
+:root {
+  --color-primary: #D1A6E6;          /* violet pastel doux */
+  --color-primary-dark: #973DA4;    /* violet plus foncé pour accents/texte */
+  --color-secondary: #F4B3D7;       /* rose pastel doux */
+  --color-secondary-dark: #DC52BF;  /* rose/violet plus vif pour accents */
+  --color-text-light: #FFFFFF;      /* texte clair (sur fonds colorés) */
+  --radius: 8px;                    /* rayon de bordure adouci pour éléments */
+  --radius-pill: 50px;              /* rayon très arrondi (badge, etc.) */
+  --color-bg: #000000;              /* fond principal noir */
+  --color-text: #FFFFFF;            /* texte principal en blanc */
+  --shadow: 0 4px 12px rgba(255,255,255,0.1);   /* ombre adaptée pour fond sombre */
+  --shadow-sm: 0 2px 6px rgba(255,255,255,0.07); /* petite ombre adaptée */
+}
+
+/* Réinitialisation de base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  font-family: sans-serif;  /* utiliser la police existante ou indiquer ici */
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Titres et textes */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+h1 { font-size: 2.5rem; line-height: 1.2; }
+h2 { font-size: 2rem; }
+p {
+  margin-bottom: 1rem;
+}
+
+/* Liens */
+a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* S'assurer que la structure prend toute la hauteur */
+html, body, #root, .app { height: 100%; }
+.app { display: flex; flex-direction: column; }
+main { flex: 1; } /* pousse le footer en bas */
+
+/* En-tête du site */
+.header {
+  background: #000000; /* fond noir */
+  box-shadow: 0 0 10px rgba(255,255,255,0.05); /* ombre légère pour séparation */
+  /*background: #FFFFFF; /* fond blanc (transparence retirée pour un style épuré) */
+  /*box-shadow: 0 0 10px rgba(0,0,0,0.03); /* légère ombre en bas pour séparation */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.header .logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--color-primary-dark);
+}
+.header .nav a {
+  /*color: var(--color-text);*/
+  color: var(--color-text-light); /* texte blanc pour visibilité */
+  margin-left: 1.5rem;
+  font-weight: 500;
+}
+.header .nav a:hover {
+  color: var(--color-primary-dark);
+}
+
+/* Dégradé violet/rose appliqué à l'arrière-plan d'une page complète */
+.page-gradient {
+  width: 100vw;
+  min-height: 100%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--color-text-light);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 4rem 0;
+}
+.page-gradient .container {
+  padding: 0 1.25rem;
+}
+
+/* Boutons (CTA, etc.) */
+.btn {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: var(--shadow);
+  transition: background-color 0.3s, transform 0.3s;
+}
+.btn:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn.cta {
+  /* Le bouton principal d'appel à l'action peut utiliser une légère variation (par exemple un dégradé) */
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--color-text-light);
+}
+
+/* Cartes (avis, sections, etc.) */
+.card {
+  background: #FFFFFF80;  /* blanc translucide léger pour effet glassmorphism */
+  backdrop-filter: blur(8px);
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  background: var(--color-secondary);
+  color: var(--color-text);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Champs de formulaire */
+input, select, textarea {
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(209, 166, 230, 0.3);
+}
+
+/* Responsive : ajustements pour mobile */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.75rem 1rem;
+  }
+  .header .nav {
+    margin-top: 0.5rem;
+  }
+  .hero-section {
+    padding: 3rem 1.5rem;
+  }
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+}
+
+/* ---- Layout utilitaires (ajouter à la fin du fichier) ---- */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.25rem; }
+.section { padding: 3rem 0; }
+.section .section-title { font-size: 2rem; margin-bottom: 1rem; }
+.section .section-sub { color: #666; margin-bottom: 1.5rem; }
+
+/* Panneau de section avec effet glassmorphism */
+.section-panel {
+  background: rgba(255, 255, 255, 0.85); /* fond clair translucide */
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius);
+  padding: 2rem;
+  color: var(--color-text);
+  box-shadow: var(--shadow);
+}
+
+/* Grille fluide pour cartes / colonnes */
+.grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+.card-soft {
+  background: rgba(255, 255, 255, 0.9);   /* panneau clair translucide */
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+.card-soft h3 { color: rgba(0, 0, 0, 0.6); }
+
+/* Steps (liste) */
+.steps { list-style: none; display: grid; gap: .75rem; padding-left: 0; }
+.steps li { display: grid; gap: .25rem; }
+.steps li strong { color: var(--color-primary-dark); }
+
+/* Citation / avis */
+.quote {
+  position: relative; padding-left: 2.25rem;
+}
+.quote::before {
+  content: "“";
+  position: absolute; left: .4rem; top: -.6rem;
+  font-size: 3rem; line-height: 1; color: var(--color-secondary);
+}
+
+/* Form layout léger */
+.form { display: grid; gap: .9rem; max-width: 560px; }
+.form .row { display: grid; gap: .9rem; grid-template-columns: 1fr 1fr; }
+@media (max-width: 720px) { .form .row { grid-template-columns: 1fr; } }
+label { display: grid; gap: .35rem; font-weight: 600; color: #555; }
+
+/* Footer harmonisé */
+.footer {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--color-text-light);
+}
+.footer-inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1.25rem 0; flex-wrap: wrap;
+}
+.footer a { color: var(--color-text-light); opacity: .9; }
+.footer a:hover { opacity: 1; }
+.footer small { opacity: .9; }
+
+/* Full-bleed utility: étend une section à 100vw même si elle est dans un container */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Empêche un scroll horizontal dû au full-bleed */
+html, body { overflow-x: hidden; }
+
+/* Optionnel: retire tout padding latéral résiduel sur la hero elle-même */
+.hero-section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
