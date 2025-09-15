@@ -1,9 +1,14 @@
 export default function Mentions() {
   return (
-    <section className="stack">
-      <h1>Mentions légales</h1>
-      <p>Éditeur : NORA — (à compléter : adresse, SIREN, contact). Hébergeur : (à compléter).</p>
-      <p>Directeur de publication : (à compléter).</p>
-    </section>
+    <main>
+      <section className="section">
+        <div className="container stack">
+          <h1>Mentions légales</h1>
+          <p><strong>Éditeur :</strong> NORA — (à compléter : adresse, SIREN, contact)</p>
+          <p><strong>Hébergeur :</strong> (à compléter)</p>
+          <p><strong>Directeur de publication :</strong> (à compléter)</p>
+        </div>
+      </section>
+    </main>
   );
 }

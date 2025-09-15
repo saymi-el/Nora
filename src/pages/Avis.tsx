@@ -1,8 +1,8 @@
 type AvisItem = { nom: string; metier: string; texte: string };
 const AVIS: AvisItem[] = [
-  { nom: 'Claire D.', metier: 'Coiffeuse', texte: 'Moins d’appels, planning mieux rempli.' },
-  { nom: 'Hugo F.', metier: 'Fleuriste', texte: 'Réponses instantanées = clients contents.' },
-  { nom: 'Mina R.', metier: 'Esthéticienne', texte: 'J’ai gagné du temps et des réservations.' },
+  {nom: 'Yanis P.', metier: 'Barbier', texte: 'Les prises de rendez-vous se font toutes seules.' },
+  { nom: 'Safia L.', metier: 'Salon de beauté', texte: 'On répond 24/7 sans être au téléphone.' },
+  { nom: 'Léa M.', metier: 'Institut', texte: 'Moins de sollicitations, plus de conversions.' },
 ];
 
 export default function Avis() {

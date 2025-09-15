@@ -7,6 +7,7 @@ import Fonctionnement from './pages/Fonctionnement';
 import Avis from './pages/Avis';
 import Contact from './pages/Contact';
 import Mentions from './pages/Mentions';
+import Equipe from './pages/Equipe';
 import Confidentialite from './pages/Confidentialite';
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/mentions-legales" element={<Mentions />} />
           <Route path="/confidentialite" element={<Confidentialite />} />
+          <Route path="/equipe" element={<Equipe />} />
         </Routes>
       </main>
       <Footer />
