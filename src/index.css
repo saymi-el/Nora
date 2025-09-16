@@ -286,3 +286,19 @@ html, body { overflow-x: hidden; }
   position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
+
+
+/* Palette de couleurs pastel violet/rose et variables globales */
+:root {
+  --color-primary: #D1A6E6;
+  --color-primary-dark: #973DA4;
+  --color-secondary: #F4B3D7;
+  --color-secondary-dark: #DC52BF;
+  --color-text-light: #FFFFFF;
+  --radius: 8px;
+  --radius-pill: 50px;
+  --color-bg: #000000;
+  --color-text: #FFFFFF;
+  --shadow: 0 4px 12px rgba(255,255,255,0.1);
+  --shadow-sm: 0 2px 6px rgba(255,255,255,0.07);
+}
